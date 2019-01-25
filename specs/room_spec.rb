@@ -8,7 +8,7 @@ class RoomTest < MiniTest::Test
 
   def setup
       @room_1 = Room.new("Victoria", 4, 0)
-      @room_2 = Room.new("Emma", 3, 0)
+      @room_2 = Room.new("Emma", 3, 1)
       @room_3 = Room.new("Geri", 6, 0)
       @room_4 = Room.new("Mel B", 8, 0)
       @room_5 = Room.new("Mel C", 2, 0)
@@ -31,8 +31,19 @@ class RoomTest < MiniTest::Test
     end
 
     def test_check_in_guests
-      @guest_1.check_in
+      @room_1.check_in(@guest_1)
       assert_equal(1, @room_1.guests_in_room)
+    end
+
+    def test_how_many_guests_in_room
+      @room_1.check_in(@guest_1)
+      @room_1.guests_in_room
+      assert_equal(1, @room_1.guests_in_room)
+    end
+
+    def test_check_out_guests
+      @room_2.check_out(@guest_1)
+      assert_equal(0, @room_2.guests_in_room)
     end
 
 
