@@ -8,10 +8,8 @@ class GuestsTest < MiniTest::Test
     @guest_1 = Guests.new("Ruth", 1)
     @guest_2 = Guests.new("Anna", 1)
     @guest_3 = Guests.new("Hekla", 1)
-    @guest_4 = Guests.new("Tinna", 1)
-    @guest_5 = Guests.new("Lovisa", 1)
 
-    guests = [@guest_1, @guest_2, @guest_3, @guest_4, @guest_5]
+    guests = [@guest_1, @guest_2, @guest_3]
   end
 
 
