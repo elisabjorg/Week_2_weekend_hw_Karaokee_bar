@@ -18,16 +18,16 @@ class RoomTest < MiniTest::Test
       guests = [@guest_1, @guest_2, @guest_3]
 
       playlists = [@room_1_playlist, @room_2_playlist, @room_3_playlist]
-      @room_1 = Room.new("Victoria", 4, @room_1_playlist, 6)
-      @room_2 = Room.new("Emma", 3, @room_2_playlist, 4)
-      @room_3 = Room.new("Geri", 1, @room_3_playlist, 2)
+      @room_1 = Room.new("Rome", 4, @room_1_playlist, 6)
+      @room_2 = Room.new("Athens", 3, @room_2_playlist, 4)
+      @room_3 = Room.new("Barcelona", 1, @room_3_playlist, 2)
       rooms  = [@room_1, @room_2, @room_3]
 
 
     end
 
     def test_room_name
-      assert_equal("Victoria", @room_1.room_name)
+      assert_equal("Rome", @room_1.room_name)
     end
 
     def test_room_capacity
@@ -75,6 +75,12 @@ class RoomTest < MiniTest::Test
     def test_room_entry_fee
       assert_equal(6, @room_1.entry_fee)
     end
+
+    #do this later
+    # def test_customer_pay_entry_fee
+    #   @room_3.check_in(@guest_1.guest_money)
+    #   assert_equal(true, @room_3.pay_entry_fee)
+    # end
 
 
 end
