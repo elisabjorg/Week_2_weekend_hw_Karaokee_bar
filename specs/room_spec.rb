@@ -72,5 +72,9 @@ class RoomTest < MiniTest::Test
       assert_equal("No space left in the room", @room_3.check_capacity)
     end
 
+    def test_room_entry_fee
+      assert_equal(6, @room_1.entry_fee)
+    end
+
 
 end

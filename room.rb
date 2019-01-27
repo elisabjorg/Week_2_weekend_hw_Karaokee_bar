@@ -40,7 +40,12 @@ class Room
       return true
   end
 
-
-
-
+  def pay_entry_fee
+    if guest_money < @entry_fee
+      return "Sorry, not enough money"
+    else
+      return true
+  end
 end
+
+end 
